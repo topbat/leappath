@@ -251,7 +251,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"account":"demo@leappath.app","password":"leappath"}' | \
             python -c "import sys,json; print(json.load(sys.stdin).get('token',''))")
-          curl -f http://localhost:8000/api/resume \
+          curl -f http://localhost:8000/api/resumes \
             -H "Authorization: Bearer $TOKEN" || exit 1
           echo "✅ Resume API passed"
 

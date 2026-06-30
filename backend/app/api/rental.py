@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.core.database import get_db
 from app.core.deps import get_current_user
-from app.core.serialize import model_to_dict, models_to_list
+from app.core.serialize import model_to_dict
 from app.models.company import CmpCompany
 from app.models.rental import RntListing
 from app.models.user import UsrUser
