@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>CareerFlux | Your Career Navigator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Quicksand:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #a53b29 100%);
+        }
+        .floating-action {
+            box-shadow: 0px 8px 24px rgba(124, 58, 237, 0.3);
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-pulse-subtle {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#00594b",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "surface": "#faf8ff",
+                        "surface-tint": "#732ee4",
+                        "on-secondary-fixed-variant": "#842415",
+                        "on-secondary-container": "#711609",
+                        "secondary-fixed": "#ffdad4",
+                        "primary-container": "#7c3aed",
+                        "surface-container-highest": "#dae2fd",
+                        "on-primary-fixed": "#25005a",
+                        "tertiary-container": "#007462",
+                        "secondary-fixed-dim": "#ffb4a6",
+                        "on-tertiary-fixed-variant": "#005143",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#ccc3d8",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#2cdebf",
+                        "tertiary-fixed": "#58fbda",
+                        "surface-bright": "#faf8ff",
+                        "inverse-primary": "#d2bbff",
+                        "surface-container": "#eaedff",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-fixed": "#eaddff",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-surface": "#131b2e",
+                        "on-secondary-fixed": "#3f0300",
+                        "on-tertiary-container": "#5cfedd",
+                        "surface-dim": "#d2d9f4",
+                        "on-tertiary-fixed": "#00201a",
+                        "secondary": "#a53b29",
+                        "on-background": "#131b2e",
+                        "background": "#faf8ff",
+                        "secondary-container": "#fe7d66",
+                        "primary": "#630ed4",
+                        "outline": "#7b7487",
+                        "on-surface-variant": "#4a4455",
+                        "inverse-surface": "#283044",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "on-primary-container": "#ede0ff",
+                        "surface-container-low": "#f2f3ff",
+                        "inverse-on-surface": "#eef0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-gutter py-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">CareerFlux</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">notifications</button>
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center border-2 border-primary/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter max-w-lg mx-auto">
+<!-- Gamified Progress Bar -->
+<section class="mb-lg">
+<div class="glass-card p-md rounded-[24px] shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Daily Momentum</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Level 12 • Pathseeker</p>
+</div>
+<div class="flex items-center gap-1 bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                        7 Day Streak
+                    </div>
+</div>
+<div class="relative w-full h-4 bg-surface-container rounded-full overflow-hidden mb-2">
+<div class="absolute top-0 left-0 h-full w-[65%] primary-gradient rounded-full transition-all duration-1000 ease-out shadow-[0_0_12px_rgba(124,58,237,0.4)]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>650 XP</span>
+<span>1000 XP to Level 13</span>
+</div>
+</div>
+</section>
+<!-- Greeting -->
+<section class="mb-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Ready to grow, Alex?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Here's your roadmap for today.</p>
+</section>
+<!-- Vertical Timeline - Today's Tasks -->
+<section class="relative">
+<!-- Timeline Path -->
+<div class="absolute left-[23px] top-4 bottom-4 w-1 bg-gradient-to-b from-primary/30 via-secondary/20 to-transparent rounded-full"></div>
+<!-- Task Items -->
+<div class="space-y-6">
+<!-- Task 1: Applied (Completed) -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-12 h-12 flex items-center justify-center bg-tertiary-container rounded-full z-10 shadow-md">
+<span class="material-symbols-outlined text-on-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="glass-card p-md rounded-[24px] opacity-75 border-tertiary-container/20">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Completed</span>
+<h3 class="font-headline-md text-headline-md mt-1 line-through text-on-surface-variant">Update Resume</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Optimized experience for UI Design roles.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Task 2: Active -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-12 h-12 flex items-center justify-center primary-gradient rounded-full z-10 shadow-lg animate-pulse-subtle">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">send</span>
+</div>
+<div class="glass-card p-md rounded-[24px] border-primary/10 ring-2 ring-primary/5">
+<div class="flex justify-between items-start">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Up Next</span>
+<h3 class="font-headline-md text-headline-md mt-1 text-on-surface">Apply to 3 Jobs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Focus on Series B startups in the FinTech space.</p>
+<div class="mt-4 flex gap-2">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center">
+<div class="w-6 h-6 bg-cover" data-alt="Minimalist geometric logo for a modern fintech company in a clean corporate style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaEeMU7kgG697mfYA7WuoluHXSzY0S2uatLo52DgFwdNrcCwZOCiEX2DOSQuCdUXFyGINZi0NtC4dn1TpbbL4ozXi-D_jwVR8i97xOQmtgksotpO-iv143965TmogeLGZ8SFldtlSbVFpRuw6TEES2OwJFmt00cQzp5ArSZZ-ikjI1Yl4qk_S6yp4V631cKq-40jONOV6tESODQKuwIZrO3wbd7MAzVSXO7aeVjqFuQsvrvSH5oKfIjiR6d08kKm6A6tpP-zbX4EPd')"></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center">
+<div class="w-6 h-6 bg-cover" data-alt="Vibrant tech startup logo using bold purple and orange colors on a clean white circle background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmwdJciJ4E5N1m9vYwTuIxZDF4VP-EgpC1W0WGeuWKfWJ9Cm4du6R5IF9P5Rh-1ISI9bUeZB94v7Jmx5DLT35x2CvP6L6L4qURv6vXcg9ntNzxhgXwaahNNpky-2nZxNu9YtK8SHBCGOODnrsfaum_jaRb55odW-U1HJuMoTiZ_dEp-X_qFuIyX1VKxtlV9g4bCak4syGEwIjCcKqKsxYMR_XtzS-S2gJhDUndEaH-rEj896FvXohgl1rTrQr6wnrdo8wV3juLGCAl')"></div>
+</div>
+<button class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded">2/3</span>
+</div>
+</div>
+</div>
+<!-- Task 3: Scheduled -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-12 h-12 flex items-center justify-center bg-secondary-container rounded-full z-10 shadow-md">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<div class="glass-card p-md rounded-[24px]">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Tonight • 6:00 PM</span>
+<h3 class="font-headline-md text-headline-md mt-1 text-on-surface">Mock Interview</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">AI Session: Behavioral questions focused on leadership.</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span> 30 mins
+                                    </span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-sm">auto_awesome</span> AI Coach
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Task 4: Future -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-12 h-12 flex items-center justify-center bg-outline-variant rounded-full z-10">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">emoji_events</span>
+</div>
+<div class="glass-card p-md rounded-[24px] bg-white/40">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Dream Goal</span>
+<h3 class="font-headline-md text-headline-md mt-1 text-on-surface-variant">First Offer Celebration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 italic">Consistency is the bridge between goals and accomplishment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Motivation Banner -->
+<section class="mt-lg">
+<div class="primary-gradient p-md rounded-[32px] text-white overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md">Unlock Pro Insights</h4>
+<p class="font-body-md text-body-md opacity-90 mt-2">See how you compare to other applicants in your field.</p>
+<button class="mt-4 bg-white text-primary font-label-md text-label-md px-6 py-2 rounded-full active:scale-95 transition-transform">Get CareerFlux+</button>
+</div>
+<!-- Abstract visual element -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute -left-4 -top-4 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+</div>
+</section>
+</main>
+<!-- FAB: Ask Assistant -->
+<button class="fixed bottom-24 right-gutter w-14 h-14 primary-gradient rounded-full flex items-center justify-center text-white floating-action z-50 hover:scale-110 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-[0px_-4px_20px_rgba(124,58,237,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-sm text-label-sm">Tracker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-sm text-label-sm">Interviews</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple interactive micro-interaction for task cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.add('scale-[0.98]');
+                setTimeout(() => {
+                    this.classList.remove('scale-[0.98]');
+                }, 150);
+            });
+        });
+    </script>
+</body></html>

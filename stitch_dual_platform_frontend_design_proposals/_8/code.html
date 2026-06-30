@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerPartner - 职位广场</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#293040",
+                    "tertiary-container": "#5f6265",
+                    "secondary": "#555f6d",
+                    "secondary-fixed-dim": "#bdc7d8",
+                    "on-background": "#141b2b",
+                    "on-primary-fixed-variant": "#003dab",
+                    "primary-fixed": "#dbe1ff",
+                    "outline-variant": "#c3c5d7",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#596372",
+                    "outline": "#737686",
+                    "surface-variant": "#dce2f7",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#dbdee1",
+                    "tertiary": "#474a4d",
+                    "secondary-container": "#d6e0f1",
+                    "inverse-primary": "#b5c4ff",
+                    "background": "#f9f9ff",
+                    "on-surface-variant": "#434654",
+                    "surface-container-high": "#e1e8fd",
+                    "surface": "#f9f9ff",
+                    "primary-container": "#1a56db",
+                    "tertiary-fixed": "#e0e2e6",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "surface-bright": "#f9f9ff",
+                    "on-secondary-fixed": "#121c28",
+                    "primary": "#003fb1",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#191c1f",
+                    "on-primary-fixed": "#00174d",
+                    "on-primary-container": "#d4dcff",
+                    "surface-dim": "#d3daef",
+                    "secondary-fixed": "#d9e3f4",
+                    "on-surface": "#141b2b",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "on-secondary-fixed-variant": "#3e4755",
+                    "surface-container-low": "#f1f3ff",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-tint": "#1353d8",
+                    "surface-container": "#e9edff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#edf0ff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "280px",
+                    "unit-md": "1rem",
+                    "unit-sm": "0.5rem",
+                    "unit-lg": "1.5rem",
+                    "gutter": "1.5rem",
+                    "unit-xs": "0.25rem",
+                    "unit-xl": "2.5rem",
+                    "margin-mobile": "1rem",
+                    "margin-desktop": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-sm-mobile": ["11px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- Top Navigation / Search Header -->
+<header class="sticky top-0 z-50 bg-surface px-margin-mobile py-unit-md flex flex-col gap-unit-sm">
+<div class="flex justify-between items-center">
+<h1 class="font-headline-sm text-headline-sm text-primary font-bold">CareerPartner</h1>
+<div class="flex gap-unit-sm">
+<span class="material-symbols-outlined text-on-surface-variant p-1">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant p-1">account_circle</span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="搜索职位、公司或关键词" type="text"/>
+</div>
+</header>
+<main class="px-margin-mobile">
+<!-- Category Quick Access -->
+<section class="mt-unit-md">
+<div class="flex justify-between items-center mb-unit-sm">
+<h2 class="font-label-md text-label-md text-on-surface font-bold">职位分类</h2>
+<span class="text-primary font-label-sm text-label-sm">查看全部</span>
+</div>
+<div class="flex overflow-x-auto gap-unit-md hide-scrollbar py-2">
+<div class="flex flex-col items-center gap-unit-xs flex-shrink-0">
+<div class="w-14 h-14 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="font-label-sm text-label-sm">技术</span>
+</div>
+<div class="flex flex-col items-center gap-unit-xs flex-shrink-0">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<span class="font-label-sm text-label-sm">设计</span>
+</div>
+<div class="flex flex-col items-center gap-unit-xs flex-shrink-0">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="font-label-sm text-label-sm">市场</span>
+</div>
+<div class="flex flex-col items-center gap-unit-xs flex-shrink-0">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined">description</span>
+</div>
+<span class="font-label-sm text-label-sm">运营</span>
+</div>
+<div class="flex flex-col items-center gap-unit-xs flex-shrink-0">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined">headset_mic</span>
+</div>
+<span class="font-label-sm text-label-sm">客服</span>
+</div>
+</div>
+</section>
+<!-- Recommended Jobs List -->
+<section class="mt-unit-xl">
+<div class="flex justify-between items-center mb-unit-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">为你推荐</h2>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="font-label-sm text-label-sm">筛选</span>
+<span class="material-symbols-outlined text-body-md">filter_list</span>
+</div>
+</div>
+<!-- Job Cards Grid -->
+<div class="flex flex-col gap-unit-md">
+<!-- Job Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-md rounded-xl shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex justify-between items-start">
+<div class="flex gap-unit-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, professional corporate tech company logo, minimalist blue and silver geometric design, studio lighting against a soft grey background, high-end professional aesthetic for a top-tier software firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHjP-dpdfAs3Q7AnJjy3dTeGbFp1KBEV8msUsB0oD6zjUUhczSvAwUscO79oMgKCxv86eJ_y-EqvkNpStV0xvWrxdJlyvI0x669EPpKHdFN1Tp-hm6Z5a-4fB3zeUp9Hb4DAgkkDsvTDa_eq1kIjDyQj__d9N-PWLuTzo0A_sNXjOZjEtlrVzeL83ZADdDGJLkhIghf3NXmv4Nj7XH2inVwUDV4w0h4bkqA993a9uAHDi0wvlhMP-PkZ4AB2o-HQrbEaH6flTvJJ7e"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">高级后端工程师</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">字节跳动 · 北京 · 3-5年</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-headline-sm">25k-45k</span>
+<div class="mt-1 px-2 py-0.5 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold">
+                                98% 匹配
+                            </div>
+</div>
+</div>
+<div class="mt-unit-md flex flex-wrap gap-unit-xs">
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">Go/Python</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">分布式系统</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">双休</span>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-md rounded-xl shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex justify-between items-start">
+<div class="flex gap-unit-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Modern creative agency logo with vibrant gradients and bold typography, representing a leading digital design firm, set in a bright contemporary light-mode UI style with professional corporate elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj6Fa5EA51PB78TjdnmHAbpVddvbnspin0T-KBzVHu8pWZgcPxYQj-1G4H7JhaKBnU3zkrOmIHVYldwmsKshRdUtJwa5VPcRsNswbDdbH_vYdCAUbygTgPPteHqbLSdehRLwRK3QnOeS11ref8BY8CAZjPBUpl2f38uyNAK676Q1xlOAFiucHgsYINAFDhPvtQ5a434ueHrdIsu9vApf9aqEiEXuHlxbTyodh8gJScQ8wseC8LX-mVeqKb1kz8OFL2e8i_7NRtfROz"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">资深UI/UX设计师</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">美团 · 上海 · 5-10年</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-headline-sm">20k-35k</span>
+<div class="mt-1 px-2 py-0.5 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold">
+                                92% 匹配
+                            </div>
+</div>
+</div>
+<div class="mt-unit-md flex flex-wrap gap-unit-xs">
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">设计系统</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">Figma</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">餐补</span>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-unit-md rounded-xl shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex justify-between items-start">
+<div class="flex gap-unit-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A sleek minimalist tech logo for an AI startup, featuring neural network motifs in a professional corporate blue and white color palette, high-contrast and sharp for a modern career platform interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKwbhTj1Hf4psiZgdRfqEUh2RS25v8K8hMnJfkI5TZX2m6iARoTBSPGTKWMFg102QuGtyF_20mu6snvnUMr0RVgGAtEE73igu-iSzJ5Z63N9uKDgrH0Y83wP2k9iXm4xy4M8c9s84pvjMiKU0cF0rPC7e0zp_6o3B5K9jkC8USYr2KZb3wWXl9UEE_B_KxWYTdvQpZuABbdA7ApuONTKM8XvT8l_T_T4EUoPe8Wr5yBcfAvw-xZrm28wdfuCsCyiXo-H32dZEypGP0"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">产品经理 (AI方向)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">小红书 · 深圳 · 1-3年</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-headline-sm">18k-30k</span>
+<div class="mt-1 px-2 py-0.5 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold">
+                                85% 匹配
+                            </div>
+</div>
+</div>
+<div class="mt-unit-md flex flex-wrap gap-unit-xs">
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">LLM应用</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">数据分析</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">年终奖</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mandatory Component) -->
+<!-- active state: "Jobs" (Tab: 职位) maps to the second item in the JSON ["Home", "Jobs", "Prep", "Track"] -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-outline-variant bg-surface lg:hidden flex justify-around items-center h-16 px-margin-mobile shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined active-nav-icon" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm-mobile">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-sm text-label-sm-mobile">Prep</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-sm text-label-sm-mobile">Track</span>
+</a>
+</nav>
+<!-- FAB for quick action -->
+<button class="fixed right-6 bottom-24 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script>
+        // Simple micro-interaction for scroll effects or active state simulation
+        document.querySelectorAll('.active\\:scale-95, .active\\:scale-90').forEach(el => {
+            el.addEventListener('touchstart', () => el.classList.add('opacity-80'));
+            el.addEventListener('touchend', () => el.classList.remove('opacity-80'));
+        });
+    </script>
+</body></html>

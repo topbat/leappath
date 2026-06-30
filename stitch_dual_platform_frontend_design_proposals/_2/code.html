@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerFlux - 发现职位</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ede0ff",
+                    "surface-dim": "#d2d9f4",
+                    "secondary-fixed": "#ffdad4",
+                    "on-surface": "#131b2e",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005143",
+                    "on-secondary-fixed-variant": "#842415",
+                    "surface-container-low": "#f2f3ff",
+                    "surface-container-highest": "#dae2fd",
+                    "surface-tint": "#732ee4",
+                    "surface-container": "#eaedff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#7c3aed",
+                    "tertiary-fixed": "#58fbda",
+                    "primary-fixed-dim": "#d2bbff",
+                    "tertiary-fixed-dim": "#2cdebf",
+                    "surface-bright": "#faf8ff",
+                    "on-secondary-fixed": "#3f0300",
+                    "primary": "#630ed4",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#00201a",
+                    "on-primary-fixed": "#25005a",
+                    "surface-variant": "#dae2fd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#5cfedd",
+                    "tertiary": "#00594b",
+                    "secondary-container": "#fe7d66",
+                    "inverse-primary": "#d2bbff",
+                    "background": "#faf8ff",
+                    "on-surface-variant": "#4a4455",
+                    "surface-container-high": "#e2e7ff",
+                    "surface": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#283044",
+                    "tertiary-container": "#007462",
+                    "secondary": "#a53b29",
+                    "secondary-fixed-dim": "#ffb4a6",
+                    "on-background": "#131b2e",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "primary-fixed": "#eaddff",
+                    "outline-variant": "#ccc3d8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#711609",
+                    "outline": "#7b7487"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Quicksand"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #faf8ff;
+            color: #131b2e;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 20px rgba(124, 58, 237, 0.05);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+        }
+        .radar-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .7; transform: scale(1.05); }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-gutter py-sm">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">CareerFlux</h1>
+<div class="flex gap-4 items-center">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A stylish headshot of a young professional creative looking optimistic, set against a soft blurred background of a modern tech office. The lighting is warm and natural, emphasizing a high-key light mode aesthetic with vibrant, clean skin tones and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3RJkpNsxWnIhBcxe2yrtk3Ibbjup-VGWsIb0A5h8MfqcULloE1zRzn-xL601ire3I4iqkGT1gAbF4qTCBJqIgEm4B1dd2eDjdOVptU2-xADvu1QskCYQP7y-KhlQiW9eJ4Fp1xBYHscJNz8UCBWi0CAC5eQzWRTffjmQ__Da9pB3dCP3T0xjNlFPmJeRZifugBEompzxStc_dj9WjHKh8EWjhCKdP8IckA35ASJ0xiPJBIq8QngWlYIx8GAy1RQT7gvA-jhAlnQZW"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="pt-24 pb-32 px-4 max-w-md mx-auto space-y-6">
+<!-- AI Interest Radar Widget -->
+<section class="glass-card rounded-[24px] p-6 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">兴趣雷达</h2>
+<p class="text-label-sm font-label-sm text-on-surface-variant">基于你的 AI 简历分析</p>
+</div>
+<span class="material-symbols-outlined text-primary-container radar-pulse" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="relative h-48 w-full flex items-center justify-center">
+<!-- Simple SVG Radar Simulation -->
+<svg class="w-40 h-40" viewbox="0 0 100 100">
+<circle class="text-outline-variant/30" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="0.5"></circle>
+<circle class="text-outline-variant/30" cx="50" cy="50" fill="none" r="30" stroke="currentColor" stroke-width="0.5"></circle>
+<circle class="text-outline-variant/30" cx="50" cy="50" fill="none" r="15" stroke="currentColor" stroke-width="0.5"></circle>
+<path class="text-outline-variant/30" d="M50 5 L50 95 M5 50 L95 50 M18 18 L82 82 M82 18 L18 82" stroke="currentColor" stroke-width="0.5"></path>
+<!-- Data Shape -->
+<polygon fill="rgba(124, 58, 237, 0.2)" points="50,15 80,40 70,75 30,75 20,40" stroke="#732ee4" stroke-width="2"></polygon>
+</svg>
+<!-- Labels -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary">产品力</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary">执行力</div>
+<div class="absolute top-1/2 right-0 -translate-y-1/2 text-[10px] font-bold text-primary">审美</div>
+<div class="absolute top-1/2 left-0 -translate-y-1/2 text-[10px] font-bold text-primary">逻辑</div>
+</div>
+<div class="mt-4 flex gap-2 overflow-x-auto scrollbar-hide">
+<span class="px-3 py-1 bg-primary-container/10 text-primary text-label-sm font-label-sm rounded-full whitespace-nowrap">UI/UX 设计</span>
+<span class="px-3 py-1 bg-primary-container/10 text-primary text-label-sm font-label-sm rounded-full whitespace-nowrap">品牌策划</span>
+<span class="px-3 py-1 bg-primary-container/10 text-primary text-label-sm font-label-sm rounded-full whitespace-nowrap">动效设计</span>
+</div>
+</section>
+<!-- Search Bar -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-[24px] py-4 pl-12 pr-6 focus:ring-2 focus:ring-primary/20 text-body-md placeholder:text-on-surface-variant/50" placeholder="搜索你心仪的职位..." type="text"/>
+</div>
+<!-- Section Title -->
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface">为你推荐</h3>
+<button class="text-label-md font-label-md text-primary">全部</button>
+</div>
+<!-- Wide Card Flow -->
+<div class="space-y-4">
+<!-- Job Card 1 -->
+<div class="glass-card rounded-[24px] p-5 active:scale-95 transition-all duration-200">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center p-2">
+<img class="w-full h-full object-contain" data-alt="A minimalist tech logo for a creative agency, featuring a stylized violet letter 'N' with clean geometric lines. The logo is centered on a white, slightly translucent square background, consistent with a modern glassmorphism design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8dFjP96cdg3XLkZZEXXEDjcXkyEgZ_NjP0jveLoIfCOrQkwjX6A8cxrLfevXQKpREkN6aTx1FU7zGAdD2sq1WYVgqm7z6c6S8ikqvMV-BPQcGtfT8BxFg9c04fa4P2PtF8ff5llEhpRrWW_4-UmPCq-XzJ4p_pnq1mXxuJIaN7ic4m2pe5dT4FAmL-zZM8qXPTaJjHeSgqDN3J-YYGQS7M-Q3Y3K6lYqs-es4wmuOUjBO3EtLX75GpM2j2Q6PtmGjG5vjD3jBW-vf"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface">资深产品设计师</h4>
+<span class="text-secondary font-bold">25k - 40k</span>
+</div>
+<p class="text-label-md text-on-surface-variant mb-3">Neo Creative • 杭州</p>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1 px-2 py-1 bg-tertiary-container/10 text-tertiary text-label-sm font-label-sm rounded-lg">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                                98% 匹配
+                            </div>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm rounded-lg">远程办公</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm rounded-lg">双休</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="glass-card rounded-[24px] p-5 active:scale-95 transition-all duration-200">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center p-2">
+<img class="w-full h-full object-contain" data-alt="A corporate tech logo for a global software firm, featuring a minimal blue and violet gradient hexagonal symbol. The design is sleek, professional, and fits perfectly within a modern digital platform's list view." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-h1IOsYuvLIZMwQ2pEBTBfICT-GUKDekVTSLJ3o6wgUX4P6YWni95Jawl3Qs2iVQHGjJgxuZHCB6itwW4RfZ9NtqyizC9YtXPZukTPfmZdBK343NsxDZLk_UliP8X_Cw-foJfJ2nXUoeGqKvVfZfEbbPVZOGJ3CRDVkKz1vMH0HKDMhe4VLWJrE0Vz_w1ftPf3dheiHEMG_MYmNn0ef1IMYuadhX-rFLLC4zPx1kpg2cBcZS0sUg7vD0y9_NPQCk_T5yYuj5o-edC"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface">创意策划经理</h4>
+<span class="text-secondary font-bold">18k - 30k</span>
+</div>
+<p class="text-label-md text-on-surface-variant mb-3">Horizon Interactive • 上海</p>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1 px-2 py-1 bg-tertiary-container/10 text-tertiary text-label-sm font-label-sm rounded-lg">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                                92% 匹配
+                            </div>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm rounded-lg">大厂背景</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm rounded-lg">五险一金</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="glass-card rounded-[24px] p-5 active:scale-95 transition-all duration-200">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center p-2">
+<img class="w-full h-full object-contain" data-alt="A minimalist logo for a high-end design boutique, featuring an elegant serif font and a soft pastel circular motif. The visual style is light, airy, and high-fashion, with a focus on modern aesthetic qualities." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXFwdQajvv_mIYTMXJpqHI4uPHQfuPYVu7zkkuVa38PGhVHKosprWmvyX0w-SASEVL5G0ybc7w2rnh6IPlz3uZDq1D_bEy0n78TONFK3nYpJ_kpDPAkNzcCuKALgzwi4pbSP-el-IogYk6hoxbuuENaIVCKozuD3mh4lkUXq1YnxTpsCW3jrq9lFQTH13ia24V1uOrorZ6kD3EuaVNpMUFUcpSStnUv98jvo13JPTSNX_gb6fR6Wom3XyJ9KTUr58Q_YWEy_7nzrg"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-body-lg text-on-surface">品牌主视觉设计师</h4>
+<span class="text-secondary font-bold">20k - 35k</span>
+</div>
+<p class="text-label-md text-on-surface-variant mb-3">Vision Studio • 北京</p>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1 px-2 py-1 bg-tertiary-container/10 text-tertiary text-label-sm font-label-sm rounded-lg">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                                89% 匹配
+                            </div>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm rounded-lg">年假多</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 primary-gradient text-on-primary rounded-full shadow-[0px_8px_24px_rgba(124,58,237,0.3)] flex items-center justify-center z-50 active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-2 shadow-[0px_-4px_20px_rgba(124,58,237,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm">Tracker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-sm text-label-sm">Interviews</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple Interaction logic
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+
+        // Dynamic Greeting (optional micro-interaction)
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('CareerFlux Discovery Page Loaded');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,17 @@
+<svg width="320" height="88" viewBox="0 0 320 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="跃途 LeapPath">
+  <defs>
+    <linearGradient id="leap-grad-h" x1="6" y1="76" x2="76" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A56DB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <!-- mark -->
+  <rect x="6" y="12" width="64" height="64" rx="16" fill="url(#leap-grad-h)"/>
+  <path d="M20 60 L31 60 L31 48 L42 48 L42 36 L53 36"
+        stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92"/>
+  <circle cx="55" cy="27" r="6.5" fill="#FFFFFF"/>
+  <circle cx="55" cy="27" r="3" fill="url(#leap-grad-h)"/>
+  <!-- wordmark -->
+  <text x="88" y="42" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="30" font-weight="700" fill="#141B2B" letter-spacing="1">跃途</text>
+  <text x="88" y="70" font-family="Inter,'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#1A56DB" letter-spacing="0.5">LeapPath</text>
+</svg>

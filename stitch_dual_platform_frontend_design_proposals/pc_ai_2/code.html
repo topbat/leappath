@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerFlux - AI Mock Interview</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ede0ff",
+                        "surface-dim": "#d2d9f4",
+                        "secondary-fixed": "#ffdad4",
+                        "on-surface": "#131b2e",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005143",
+                        "on-secondary-fixed-variant": "#842415",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-tint": "#732ee4",
+                        "surface-container": "#eaedff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#7c3aed",
+                        "tertiary-fixed": "#58fbda",
+                        "primary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed-dim": "#2cdebf",
+                        "surface-bright": "#faf8ff",
+                        "on-secondary-fixed": "#3f0300",
+                        "primary": "#630ed4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#00201a",
+                        "on-primary-fixed": "#25005a",
+                        "surface-variant": "#dae2fd",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#5cfedd",
+                        "tertiary": "#00594b",
+                        "secondary-container": "#fe7d66",
+                        "inverse-primary": "#d2bbff",
+                        "background": "#faf8ff",
+                        "on-surface-variant": "#4a4455",
+                        "surface-container-high": "#e2e7ff",
+                        "surface": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#283044",
+                        "tertiary-container": "#007462",
+                        "secondary": "#a53b29",
+                        "secondary-fixed-dim": "#ffb4a6",
+                        "on-background": "#131b2e",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "primary-fixed": "#eaddff",
+                        "outline-variant": "#ccc3d8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#711609",
+                        "outline": "#7b7487"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "container-max": "1200px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Quicksand"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(250, 248, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .video-container {
+            mask-image: radial-gradient(circle, black 60%, transparent 100%);
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .ai-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+        .transcript-bubble {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-hidden">
+<!-- Top Navigation Bar -->
+<nav class="w-full h-16 sticky top-0 z-40 bg-surface/80 backdrop-blur-xl shadow-[0px_4px_20px_rgba(124,58,237,0.05)] flex justify-between items-center px-gutter">
+<div class="flex items-center gap-sm">
+<span class="font-display-lg text-headline-md font-bold bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent">CareerFlux</span>
+<div class="h-6 w-[1px] bg-outline-variant/30 mx-2"></div>
+<span class="font-label-md text-on-surface-variant">AI Interview Simulation</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs px-3 py-1.5 rounded-full bg-primary-container/10 text-primary font-label-md">
+<span class="w-2 h-2 rounded-full bg-primary ai-pulse"></span>
+                LIVE SESSION: Senior UI Designer
+            </div>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border-2 border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young creative designer with a friendly smile, high-quality studio lighting, set against a soft violet gradient background that matches the CareerFlux UI brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIUWR31-PEHKGQpUOGfFTrm083qt6WMAUG246K9VyyY_kAArZZ6ohO9_RysjGS7rXcQXzRdouhofyEo7rNnMGeeaLX2FXOWqkyJDRMoUoqWz9kqvqW6fZIOGyDjeLxE_t2vPUbQHTd4zjRVw8uAF58VBjzTbNEKbsb2qIXPw5zWDHExGtfay5WFDrDWqnwv_oF1rVU5BxKJM9o8pBhYHimjAm4xRCRGesHXTtRgtxKxJ-S135dpWbEZN131GI997NcAOfhGVAwoxe8"/>
+</button>
+</div>
+</div>
+</nav>
+<main class="flex h-[calc(100vh-64px)] p-gutter gap-gutter relative">
+<!-- Background Animation Overlay -->
+
+<!-- Left Column: Video & Feedback -->
+<div class="flex-1 flex flex-col gap-gutter">
+<!-- Main Video Section -->
+<div class="relative flex-1 bg-surface-container rounded-[32px] overflow-hidden shadow-xl border border-white/40">
+<!-- AI Interviewer Video (Simulated) -->
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center">
+<div class="w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A high-tech digital human avatar of a professional female interviewer, viewed from the chest up. She is sitting in a minimalist, bright office with glass partitions and soft purple ambient lighting. The style is hyper-realistic with a soft cinematic blur in the background, matching the clean and breathable CareerFlux aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgE22Hi85QVBwn6ktu9ibk597ymNkPkMkyGuoIlsug2ackTKfZftJG_O13HUmvuvyjpaNol71iFjPOUEsyOP4Lo-3oBbxHV8QPI2O3g8tH2SDnPPRaxjzMwQtbZ7-scpUjhb6WTsXtaN2nfAbCNaj7nBH36YJ3XwYWfM5NvqrmVi90KF150cz-_14P0Km_HNTp-LWdM8OHFop_3mLZS-0IYSuEiLJWbFrQ_k6kVLNx1F9MhtZzHoZqIOXNYCcYEXYcq_UHYPkXQ2ok"/>
+<!-- Glass Status Overlay -->
+<div class="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full flex items-center gap-2 border border-white/20">
+<span class="material-symbols-outlined text-primary" data-icon="record_voice_over">record_voice_over</span>
+<span class="text-label-md text-primary font-bold">AI INTERVIEWER IS ASKING...</span>
+</div>
+</div>
+</div>
+<!-- User PIP (Picture in Picture) -->
+<div class="absolute bottom-6 right-6 w-48 h-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/50 bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A young professional candidate sitting in front of a laptop, brightly lit by the screen's glow. The background is a clean, modern home office. The lighting is warm and flattering, conveying a sense of focus and readiness for a creative career interview." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkgy6hkUiXKJ5ZqbNK4fCwWQLHYVGmE_amJps7l67rr9OtozzyJmidsbVPBXnO2lcRcTFKR0wlmoILBrlHb_KGIrM00ATePk1gjKGoqaNITxCg0NmaWF17ZIpNfKs4rVnopCg3en0iWVvK5KZTwc-azMKxrX_sFNSXe_2kGsj4WRJGHUUn4MmdMUvIE0aABl8XM7LEudBhg3Ypgwha5UAZuaODAiggtpbNtNJdEFZ5QNtk7nrG6yHQPwmTgBYvVC2_BKIEey17ewT"/>
+<div class="absolute bottom-3 left-3 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded text-[10px] text-white font-bold uppercase tracking-wider">You (Camera On)</div>
+</div>
+<!-- Floating Glass Control Panel -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 glass-panel px-8 py-4 rounded-full flex items-center gap-8 shadow-2xl">
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-primary-container/20 transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="mic">mic</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Mute</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-primary-container/20 transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="videocam">videocam</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Camera</span>
+</button>
+<div class="w-[1px] h-10 bg-outline-variant/30"></div>
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-[0px_8px_24px_rgba(124,58,237,0.3)] group-active:scale-95 transition-all">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase">Ask AI Hint</span>
+</button>
+<div class="w-[1px] h-10 bg-outline-variant/30"></div>
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-12 h-12 rounded-full bg-error-container/20 border border-error/20 flex items-center justify-center shadow-sm hover:bg-error-container transition-all duration-300">
+<span class="material-symbols-outlined text-error" data-icon="call_end" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</div>
+<span class="text-[10px] font-bold text-error uppercase">Exit</span>
+</button>
+</div>
+</div>
+<!-- Bottom: Real-time Analytics Charts -->
+<div class="h-40 grid grid-cols-2 gap-gutter">
+<div class="glass-panel p-4 rounded-[24px] flex flex-col justify-between">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Logic Consistency</span>
+<span class="text-label-md text-primary font-bold">88% Stable</span>
+</div>
+<div class="h-16 flex items-end gap-1.5 px-2">
+<!-- Simulated Bar Chart -->
+<div class="flex-1 bg-primary/20 rounded-t-full h-[60%] hover:h-[65%] transition-all duration-500"></div>
+<div class="flex-1 bg-primary/30 rounded-t-full h-[85%] animate-pulse"></div>
+<div class="flex-1 bg-primary/20 rounded-t-full h-[70%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-full h-[95%]"></div>
+<div class="flex-1 bg-primary/30 rounded-t-full h-[75%]"></div>
+<div class="flex-1 bg-primary-container rounded-t-full h-[90%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-full h-[65%]"></div>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-[24px] flex flex-col justify-between">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Confidence Score</span>
+<span class="text-label-md text-secondary font-bold">High (Optimal)</span>
+</div>
+<div class="h-16 relative flex items-center justify-center">
+<!-- Waveform simulation -->
+<div class="w-full h-8 flex items-center gap-1 overflow-hidden">
+<div class="h-1 w-12 bg-secondary/40 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+<div class="h-4 w-12 bg-secondary/60 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+<div class="h-8 w-12 bg-secondary rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+<div class="h-5 w-12 bg-secondary/50 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+<div class="h-2 w-12 bg-secondary/30 rounded-full animate-bounce" style="animation-delay: 0.5s"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Live Transcription -->
+<div class="w-96 flex flex-col gap-gutter">
+<!-- Transcript Feed -->
+<div class="flex-1 glass-panel rounded-[32px] flex flex-col overflow-hidden shadow-lg">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<h3 class="font-headline-md text-primary">Live Script</h3>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-4 scroll-hide">
+<!-- AI Bubble -->
+<div class="flex flex-col gap-1 transcript-bubble">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase ml-2">Interviewer</span>
+<div class="bg-surface-container-high rounded-2xl rounded-tl-none p-4 text-body-md text-on-surface max-w-[90%]">
+                            Could you tell me about a time you handled a difficult design challenge under pressure?
+                        </div>
+</div>
+<!-- User Bubble -->
+<div class="flex flex-col gap-1 items-end transcript-bubble">
+<span class="text-[10px] font-bold text-primary uppercase mr-2">You</span>
+<div class="bg-primary-container text-on-primary-container rounded-2xl rounded-tr-none p-4 text-body-md max-w-[90%] shadow-md">
+                            Certainly! Last year, during a major rebranding project, we had to pivot our entire design language just two weeks before the product launch...
+                        </div>
+</div>
+<!-- Real-time Typing Simulation -->
+<div class="flex flex-col gap-1 items-end transcript-bubble">
+<span class="text-[10px] font-bold text-primary uppercase mr-2">You (Speaking)</span>
+<div class="bg-primary-container/10 border border-primary/20 text-on-surface rounded-2xl rounded-tr-none p-4 text-body-md max-w-[90%] flex gap-1">
+<span class="italic text-on-surface-variant">The biggest challenge was maintaining consistency...</span>
+<span class="w-[2px] h-5 bg-primary animate-pulse"></span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-primary-container/5 border-t border-outline-variant/10">
+<div class="flex items-center gap-3 text-primary font-label-md">
+<span class="material-symbols-outlined" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span>TIP: Focus on the "Result" in STAR method.</span>
+</div>
+</div>
+</div>
+<!-- Context Info -->
+<div class="h-40 glass-panel p-6 rounded-[32px] flex flex-col justify-center">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="A minimalist tech company logo with clean lines and a vibrant purple accent, representing a high-end creative agency or SaaS firm, displayed on a clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlnYzCdMKETtt8enH2hlpW4NKBQXqSKO9oiGFSF-asOtiRXITImxTFAaezCIYUwZDsQdothewg02cRH080ZEqMv1fnedmyq3eo0fVZPz2vBMESRmPQ3Ga-Hl7GVwQHqLvdy42yo6f_0j5V3seOp2Fmb0iWrM6bWQc57MPgmmCCMXGq_1LjmgD9OytxxPVEUzvj6UeACrlyes80GTV4IrfYox70R_WrUWMBIbm1BPy-D-BjQ5Z9wWGeKQ9ffB66WCwdmkOVGpehyUFa"/>
+</div>
+<div>
+<h4 class="font-headline-md text-on-surface leading-tight">Senior Product Designer</h4>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest">Stripe • Remote</p>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold">FIGMA</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold">SYSTEMS</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold">LEADERSHIP</span>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for AI Assistant -->
+<button class="fixed bottom-gutter right-gutter w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-container text-white shadow-[0px_8px_24px_rgba(124,58,237,0.3)] hover:scale-110 active:scale-95 transition-all z-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<script>
+        // Simple micro-interaction for the "Live" indicator
+        setInterval(() => {
+            const dots = document.querySelectorAll('.animate-pulse');
+            dots.forEach(dot => {
+                dot.style.opacity = Math.random() * 0.5 + 0.5;
+            });
+        }, 1000);
+
+        // Interactive hover effect for the transcription bubbles
+        document.querySelectorAll('.transcript-bubble').forEach(bubble => {
+            bubble.addEventListener('mouseenter', () => {
+                bubble.style.transform = 'translateX(5px)';
+                bubble.style.transition = 'transform 0.3s ease';
+            });
+            bubble.addEventListener('mouseleave', () => {
+                bubble.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body></html>

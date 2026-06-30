@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerFlux | 个人工作台</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ede0ff",
+                    "surface-dim": "#d2d9f4",
+                    "secondary-fixed": "#ffdad4",
+                    "on-surface": "#131b2e",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005143",
+                    "on-secondary-fixed-variant": "#842415",
+                    "surface-container-low": "#f2f3ff",
+                    "surface-container-highest": "#dae2fd",
+                    "surface-tint": "#732ee4",
+                    "surface-container": "#eaedff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#7c3aed",
+                    "tertiary-fixed": "#58fbda",
+                    "primary-fixed-dim": "#d2bbff",
+                    "tertiary-fixed-dim": "#2cdebf",
+                    "surface-bright": "#faf8ff",
+                    "on-secondary-fixed": "#3f0300",
+                    "primary": "#630ed4",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#00201a",
+                    "on-primary-fixed": "#25005a",
+                    "surface-variant": "#dae2fd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#5cfedd",
+                    "tertiary": "#00594b",
+                    "secondary-container": "#fe7d66",
+                    "inverse-primary": "#d2bbff",
+                    "background": "#faf8ff",
+                    "on-surface-variant": "#4a4455",
+                    "surface-container-high": "#e2e7ff",
+                    "surface": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#283044",
+                    "tertiary-container": "#007462",
+                    "secondary": "#a53b29",
+                    "secondary-fixed-dim": "#ffb4a6",
+                    "on-background": "#131b2e",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "primary-fixed": "#eaddff",
+                    "outline-variant": "#ccc3d8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#711609",
+                    "outline": "#7b7487"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Quicksand"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            box-shadow: 0px 4px 20px rgba(124, 58, 237, 0.05);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 10px 30px rgba(124, 58, 237, 0.12);
+        }
+        .primary-gradient-bg {
+            background: linear-gradient(135deg, #7c3aed, #fe7d66);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #630ed4, #fe7d66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(124, 58, 237, 0.2);
+            border-radius: 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-72 flex flex-col fixed left-0 top-0 z-50 bg-surface/90 border-r border-outline-variant/20 backdrop-blur-md shadow-[0px_10px_30px_rgba(124,58,237,0.12)]">
+<div class="flex flex-col h-full py-md px-sm">
+<!-- Brand Identity -->
+<div class="px-4 py-6 mb-8">
+<h1 class="font-display-lg text-headline-md font-bold bg-gradient-to-r from-primary to-secondary-container bg-clip-text text-transparent">CareerFlux</h1>
+<p class="text-on-surface-variant font-label-md text-label-sm">Next-gen Job Search</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-grow space-y-2">
+<a class="flex items-center gap-sm bg-primary-container text-on-primary-container rounded-xl px-4 py-3 mx-2 my-1 shadow-md font-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-xl px-4 py-3 mx-2 my-1 hover:bg-surface-container-high transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Resumes</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-xl px-4 py-3 mx-2 my-1 hover:bg-surface-container-high transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span>AI Assistant</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-xl px-4 py-3 mx-2 my-1 hover:bg-surface-container-high transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-sm text-on-surface-variant hover:text-primary rounded-xl px-4 py-3 mx-2 my-1 hover:bg-surface-container-high transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help</span>
+</a>
+</nav>
+<!-- Bottom CTA / Profile -->
+<div class="mt-auto px-4 py-6 space-y-4">
+<button class="w-full flex items-center justify-center gap-2 py-4 rounded-2xl primary-gradient-bg text-white font-label-md shadow-[0px_8px_24px_rgba(124,58,237,0.3)] hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    Ask Assistant
+                </button>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young creative professional with a confident smile, wearing modern business-casual attire. The background is a soft-focus office with warm ambient lighting and hints of violet and teal accents, maintaining a professional yet approachable aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3nThP2lBDXABTwxQgm0xvv-MlsQ-4MUjf1UupSAINyPfWxhXXhLmgYoJcTjQg6uFjLDM_fUwBj2N0MPH5ETg_1q02pTlD5Nx8-4GAguLXW1flsBoBudWDESQfpdqTFlcLXPZSl4KUqBkEGxGSoiaebWt0SQE1fQc5O-czR3m_8NLLrXlvH7gXXQLrKkpYiJWqbaxT-F-5CQlgdOlRas5zIm8f77x22vKN6vdILCyCvTY0aFr-Ctp43-jj18IOmcN5s0YgDeW2eUVQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface">Alex Rivera</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider">Premium Member</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="w-full h-16 sticky top-0 z-40 bg-surface/80 dark:bg-surface-container-low/80 backdrop-blur-xl shadow-[0px_4px_20px_rgba(124,58,237,0.05)] ml-72 flex justify-between items-center px-gutter">
+<div class="flex items-center gap-md">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 text-body-md transition-all" placeholder="Search roles, skills, or companies..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-full hover:bg-primary-container/10 text-on-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary-container rounded-full ring-2 ring-surface"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary-container/10 text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-72 min-h-screen p-gutter relative">
+<!-- Subtle Animated Background Component -->
+<div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+
+</div>
+<!-- Dashboard Layout Grid -->
+<div class="max-w-container-max mx-auto space-y-lg">
+<!-- Welcome Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-end gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">早安, Alex 👋</h2>
+<p class="text-on-surface-variant font-body-lg">今天有 3 个新的面试机会值得你关注。继续加油！</p>
+</div>
+<div class="flex gap-sm">
+<span class="bg-surface-container-high px-4 py-2 rounded-full font-label-md text-primary">2023.10.27</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-2 rounded-full font-label-md">Status: Active</span>
+</div>
+</section>
+<!-- Bento Grid - Row 1 -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- 求职进度总览 (Circular Chart) -->
+<div class="col-span-12 lg:col-span-4 glass-card rounded-[24px] p-md flex flex-col items-center justify-center text-center">
+<h3 class="font-headline-md text-headline-md mb-6 self-start">求职进度</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle class="transition-all duration-1000" cx="96" cy="96" fill="transparent" r="80" stroke="url(#progressGradient)" stroke-dasharray="502.65" stroke-dashoffset="125.66" stroke-linecap="round" stroke-width="12"></circle>
+<defs>
+<lineargradient id="progressGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#7c3aed"></stop>
+<stop offset="100%" stop-color="#fe7d66"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-headline-lg font-display-lg text-primary">75%</span>
+<span class="text-label-sm text-on-surface-variant uppercase">Profile Strength</span>
+</div>
+</div>
+<p class="mt-6 text-on-surface-variant font-body-md">完成作品集案例，即可提升至 90%</p>
+</div>
+<!-- 今日任务卡片 -->
+<div class="col-span-12 lg:col-span-8 glass-card rounded-[24px] p-md overflow-hidden relative">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md">今日任务</h3>
+<button class="text-primary font-label-md hover:underline">查看全部</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-md p-4 bg-surface-container-lowest/50 rounded-2xl group cursor-pointer hover:translate-x-2 transition-transform">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">event_repeat</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface">与 ByteDance 的首轮面试</h4>
+<p class="text-label-sm text-on-surface-variant">下午 2:00 • 视频通话</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white px-4 py-2 rounded-lg text-label-sm">加入</button>
+</div>
+<div class="flex items-center gap-md p-4 bg-surface-container-lowest/50 rounded-2xl group cursor-pointer hover:translate-x-2 transition-transform">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">edit_document</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface">更新作品集项目 A</h4>
+<p class="text-label-sm text-on-surface-variant">截止时间: 20:00</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white px-4 py-2 rounded-lg text-label-sm">标记完成</button>
+</div>
+<div class="flex items-center gap-md p-4 bg-surface-container-lowest/50 rounded-2xl group cursor-pointer hover:translate-x-2 transition-transform">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface">回复 Meta 的招聘邮件</h4>
+<p class="text-label-sm text-on-surface-variant">待处理: 2 封</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-white px-4 py-2 rounded-lg text-label-sm">写回信</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid - Row 2 -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- 最近投递状态流 -->
+<div class="col-span-12 lg:col-span-7 glass-card rounded-[24px] p-md">
+<h3 class="font-headline-md text-headline-md mb-6">投递状态流</h3>
+<div class="space-y-6 relative before:absolute before:left-6 before:top-4 before:bottom-4 before:w-0.5 before:bg-outline-variant/30">
+<!-- Item 1 -->
+<div class="relative pl-12">
+<div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-container/20"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-label-md text-on-surface">Senior UI Designer</h4>
+<p class="text-label-sm text-on-surface-variant">Tencent · 深圳</p>
+</div>
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm">初面中</span>
+</div>
+<div class="flex gap-2">
+<span class="text-[11px] bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">昨天 14:30</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative pl-12">
+<div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-tertiary ring-4 ring-tertiary-container/20"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-label-md text-on-surface">Product Manager</h4>
+<p class="text-label-sm text-on-surface-variant">Google · 上海</p>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-sm">Offer!</span>
+</div>
+<div class="flex gap-2">
+<span class="text-[11px] bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">3天前</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative pl-12">
+<div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-outline ring-4 ring-outline-variant/20"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-label-md text-on-surface">UX Researcher</h4>
+<p class="text-label-sm text-on-surface-variant">Alibaba · 杭州</p>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-label-sm">已投递</span>
+</div>
+<div class="flex gap-2">
+<span class="text-[11px] bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">2023.10.22</span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI 职业建议模块 -->
+<div class="col-span-12 lg:col-span-5 primary-gradient-bg rounded-[24px] p-md text-white shadow-2xl relative overflow-hidden flex flex-col">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-sm mb-6">
+<div class="p-2 bg-white/20 backdrop-blur-md rounded-xl float-animation">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md">AI 职业助手</h3>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 mb-6 italic font-body-md border border-white/20">
+                            "Alex，我注意到你在 UI 设计和 Motion Graphics 方面的技能结合得很完美。建议你在简历中更突出 **Interaction Design** 的作品，这能提升你在大厂的竞争力。"
+                        </div>
+<div class="space-y-3">
+<h4 class="text-label-sm uppercase tracking-widest opacity-70">推荐提升技能</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/20 px-3 py-1 rounded-full text-label-sm hover:bg-white/30 transition-colors cursor-pointer">Three.js</span>
+<span class="bg-white/20 px-3 py-1 rounded-full text-label-sm hover:bg-white/30 transition-colors cursor-pointer">A/B Testing</span>
+<span class="bg-white/20 px-3 py-1 rounded-full text-label-sm hover:bg-white/30 transition-colors cursor-pointer">Design Ops</span>
+</div>
+</div>
+</div>
+<button class="mt-auto w-full py-4 bg-white text-primary font-bold rounded-2xl hover:bg-surface-bright transition-colors shadow-lg active:scale-95 transition-transform">
+                        开始深度职业评测
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Tooltip (Contextual FAB for Dashboard) -->
+<button class="fixed bottom-gutter right-gutter w-16 h-16 rounded-full primary-gradient-bg text-white shadow-[0px_8px_24px_rgba(124,58,237,0.3)] flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-50 group" id="ai-fab">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">spark</span>
+<div class="absolute right-20 bg-surface text-on-surface-variant px-4 py-2 rounded-xl shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-label-md border border-outline-variant/20">
+            需要面试建议？
+        </div>
+</button>
+<script>
+        // Micro-interactions and effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle parallax for cards
+            const cards = document.querySelectorAll('.glass-card');
+            document.addEventListener('mousemove', (e) => {
+                const { clientX, clientY } = e;
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                const moveX = (clientX - centerX) / 100;
+                const moveY = (clientY - centerY) / 100;
+
+                cards.forEach(card => {
+                    card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            });
+
+            // Smooth progress circle animation
+            setTimeout(() => {
+                const circle = document.querySelector('circle[stroke-dasharray]');
+                if(circle) {
+                    // Start from empty to 75%
+                    circle.style.strokeDashoffset = '125.66';
+                }
+            }, 300);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,53 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.env
+
+# === Database ===
+*.db
+*.sqlite3
+
+# === Node ===
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+*.log
+logs/
+
+# === Coverage ===
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# === Testing ===
+.pytest_cache/
+.tox/
+.nox/
+
+# === Build artifacts ===
+*.tar.gz
+*.whl

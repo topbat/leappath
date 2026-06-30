@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  leappath:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "8000:8000"
+    volumes:
+      - leappath-data:/app/data
+    environment:
+      - LEAPPATH_SECRET_KEY=${SECRET_KEY:-leappath-prod-secret-key-change-me}
+      - LEAPPATH_DEMO_MODE=${DEMO_MODE:-true}
+      - LEAPPATH_DATABASE_URL=sqlite:////app/data/leappath.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - leappath-net
+
+networks:
+  leappath-net:
+    driver: bridge
+
+volumes:
+  leappath-data:

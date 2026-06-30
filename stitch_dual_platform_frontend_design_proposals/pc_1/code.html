@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerFlux | 简历润色中心</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;family=Plus+Jakarta+Sans:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#00594b",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "surface": "#faf8ff",
+                    "surface-tint": "#732ee4",
+                    "on-secondary-fixed-variant": "#842415",
+                    "on-secondary-container": "#711609",
+                    "secondary-fixed": "#ffdad4",
+                    "primary-container": "#7c3aed",
+                    "surface-container-highest": "#dae2fd",
+                    "on-primary-fixed": "#25005a",
+                    "tertiary-container": "#007462",
+                    "secondary-fixed-dim": "#ffb4a6",
+                    "on-tertiary-fixed-variant": "#005143",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#ccc3d8",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#2cdebf",
+                    "tertiary-fixed": "#58fbda",
+                    "surface-bright": "#faf8ff",
+                    "inverse-primary": "#d2bbff",
+                    "surface-container": "#eaedff",
+                    "surface-container-high": "#e2e7ff",
+                    "primary-fixed": "#eaddff",
+                    "primary-fixed-dim": "#d2bbff",
+                    "on-surface": "#131b2e",
+                    "on-secondary-fixed": "#3f0300",
+                    "on-tertiary-container": "#5cfedd",
+                    "surface-dim": "#d2d9f4",
+                    "on-tertiary-fixed": "#00201a",
+                    "secondary": "#a53b29",
+                    "on-background": "#131b2e",
+                    "background": "#faf8ff",
+                    "secondary-container": "#fe7d66",
+                    "primary": "#630ed4",
+                    "outline": "#7b7487",
+                    "on-surface-variant": "#4a4455",
+                    "inverse-surface": "#283044",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "on-primary-container": "#ede0ff",
+                    "surface-container-low": "#f2f3ff",
+                    "inverse-on-surface": "#eef0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xs": "4px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "headline-lg": ["Quicksand"],
+                    "body-md": ["Quicksand", "Microsoft YaHei", "sans-serif"],
+                    "label-sm": ["Plus Jakarta Sans", "Microsoft YaHei"],
+                    "body-lg": ["Quicksand", "Microsoft YaHei"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "label-md": ["Plus Jakarta Sans", "Microsoft YaHei"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #a53b29 100%);
+        }
+        .floating-action {
+            box-shadow: 0px 8px 24px rgba(124, 58, 237, 0.3);
+        }
+        .item-active {
+            box-shadow: 0px 10px 30px rgba(124, 58, 237, 0.12);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ccc3d8;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface selection:bg-primary/20 selection:text-primary">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-gutter py-sm">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">CareerFlux</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary font-bold transition-opacity hover:opacity-80" href="#">简历库</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#">AI 助手</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#">面试准备</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-rounded text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-rounded text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation Anchor (Hidden on Mobile) -->
+<aside class="hidden lg:flex h-full w-64 fixed left-0 top-0 z-40 bg-surface border-r border-outline-variant/20 flex-col pt-32 p-md gap-4">
+<div class="px-4 mb-2">
+<p class="text-[10px] font-bold uppercase tracking-[0.15em] text-outline">简历润色中心</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-xl font-bold shadow-sm transition-all" href="#">
+<span class="material-symbols-rounded" data-icon="description">description</span>
+<span class="font-label-md text-label-md">我的简历</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-rounded" data-icon="magic_button">magic_button</span>
+<span class="font-label-md text-label-md">AI 智能助手</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-rounded" data-icon="space_dashboard">space_dashboard</span>
+<span class="font-label-md text-label-md">数据看板</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-rounded" data-icon="settings_heart">settings_heart</span>
+<span class="font-label-md text-label-md">个人设置</span>
+</a>
+</nav>
+<div class="mt-auto p-5 glass rounded-[24px] border-outline-variant/30 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-full -mr-8 -mt-8"></div>
+<p class="font-label-sm text-label-sm text-primary mb-3">专业版方案已激活</p>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden mb-2">
+<div class="h-full primary-gradient w-[85%] rounded-full"></div>
+</div>
+<div class="flex justify-between items-center px-1">
+<p class="text-[10px] text-on-surface-variant">剩余额度</p>
+<p class="text-[10px] font-bold text-on-surface">850 / 1000</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 pb-32 px-4 md:px-8 max-w-screen-2xl mx-auto">
+<!-- Header Section -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant mb-3">
+<span class="font-label-sm text-label-sm opacity-60">我的简历</span>
+<span class="material-symbols-rounded text-[14px]" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">高级产品设计师 2024</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+                简历润色中心
+                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">BETA</span>
+</h1>
+<p class="text-on-surface-variant mt-2 font-medium">将平庸的项目经历转化为极具影响力的 STAR 叙事。</p>
+</div>
+<div class="flex items-center gap-4 bg-white/50 p-3 rounded-2xl border border-outline-variant/20 shadow-sm">
+<div class="flex -space-x-2">
+<div class="w-12 h-12 rounded-full border-4 border-surface bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-rounded" data-icon="bolt">bolt</span>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-surface primary-gradient flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-rounded" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-on-surface">AI 深度分析中</p>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full animate-pulse"></span>
+<p class="text-xs text-on-surface-variant">正在解构工作背景...</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Dual-Pane Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
+<!-- Left Pane: Original Content -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface">
+<span class="material-symbols-rounded text-primary/60" data-icon="contract_edit">contract_edit</span>
+                    经历原句
+                </h3>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/30">
+                    已选 3 条描述
+                </span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="group relative glass p-6 rounded-[32px] transition-all duration-500 hover:item-active border-transparent hover:border-primary/30">
+<div class="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-primary/10 group-hover:bg-primary rounded-full transition-all"></div>
+<p class="text-on-surface-variant group-hover:text-on-surface transition-colors leading-relaxed">
+                        参与了公司移动应用的重新设计，重点关注结账流程，以便用户更容易购买商品。
+                    </p>
+<button class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 p-2.5 rounded-xl bg-primary/10 text-primary transition-all hover:bg-primary hover:text-white">
+<span class="material-symbols-rounded text-[20px]" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="group relative glass p-6 rounded-[32px] transition-all duration-500 hover:item-active border-primary/40 bg-white/95 ring-4 ring-primary/5">
+<div class="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-16 bg-primary rounded-full shadow-[0_0_12px_rgba(124,58,237,0.5)]"></div>
+<div class="flex items-center gap-2 mb-3">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[10px] font-extrabold text-primary tracking-widest uppercase">正在进行 AI 优化</span>
+</div>
+<p class="text-on-surface font-semibold leading-relaxed text-lg">
+                        管理着一个由 5 名初级设计师组成的团队，创建了一个设计系统，并将其应用于多个内部工具。
+                    </p>
+</div>
+<!-- Item 3 -->
+<div class="group relative glass p-6 rounded-[32px] transition-all duration-500 hover:item-active border-transparent hover:border-primary/30">
+<div class="absolute -left-2 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-primary/10 group-hover:bg-primary rounded-full transition-all"></div>
+<p class="text-on-surface-variant group-hover:text-on-surface transition-colors leading-relaxed">
+                        通过修复漏洞和为初次使用的客户添加新的入职教程，提高了用户留存率。
+                    </p>
+<button class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 p-2.5 rounded-xl bg-primary/10 text-primary transition-all hover:bg-primary hover:text-white">
+<span class="material-symbols-rounded text-[20px]" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+</div>
+<!-- Media Asset -->
+<div class="mt-4 rounded-[40px] overflow-hidden h-52 relative border border-outline-variant/30 shadow-inner bg-surface-container-low group/img">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 group-hover/img:opacity-0 transition-opacity duration-700"></div>
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover/img:scale-110" data-alt="Abstract workflow visual" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM65h0CHIjk68TE03gUPnWEUfGDRv1VjX7X4FU6RPu4laPQXtl-q-Gkl118okflwqbicYFTNCg6cp7HzDiiSL5qnFETRPjY2cZPTefrMwNu5K76hILtVC-5g3YIHVXqY8o6pkGJ9hyMnTV9aJ1-PbpTrHo9EXh2aA3VyW_nre0WKFGwcHhdyUnFW9GggnCWbnu7DrGe4n2l-yfszdHCPVqERxNgk_bEPwPlP0u2WbvqdewVO2abbh0PYm7_HNUJhTKAw02lIUc2TYZ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="glass px-8 py-4 rounded-full flex items-center gap-4 shadow-xl border-white/40">
+<span class="material-symbols-rounded text-primary animate-bounce" data-icon="tips_and_updates" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">悬停内容可进行手动精修</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Pane: AI Suggestion -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="flex items-center gap-2 font-headline-md text-headline-md text-primary">
+<span class="material-symbols-rounded" data-icon="temp_preferences_custom" style="font-variation-settings: 'FILL' 1;">temp_preferences_custom</span>
+                    STAR 深度重写
+                </h3>
+<div class="flex items-center gap-3">
+<div class="flex h-2 w-24 bg-surface-container-highest rounded-full overflow-hidden border border-outline-variant/20">
+<div class="h-full primary-gradient w-full animate-shimmer"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">置信度: 98%</span>
+</div>
+</div>
+<!-- Rewrite Card -->
+<div class="relative flex-1 flex flex-col glass rounded-[48px] p-10 border-primary/20 overflow-hidden min-h-[550px] shadow-2xl">
+<div class="absolute top-0 right-0 p-10 pointer-events-none">
+<span class="material-symbols-rounded text-primary/10 text-[140px] rotate-12 select-none" data-icon="verified_user">verified_user</span>
+</div>
+<!-- STAR Breakdown -->
+<div class="relative z-10 flex flex-col gap-10 h-full">
+<div class="space-y-8">
+<div class="space-y-3">
+<label class="text-[10px] font-black text-secondary uppercase tracking-[0.3em] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 情境与任务 (S&amp;T)
+                            </label>
+<p class="text-lg font-bold text-on-surface leading-snug">主导了公司内部工具生态系统的统一设计战略，同时指导一个 5 人的跨职能设计师团队。</p>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-black text-primary uppercase tracking-[0.3em] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span> 核心行动 (A)
+                            </label>
+<p class="text-lg font-bold text-on-surface leading-snug">统筹并落地了基于 Figma 变量和 React 组件库的可扩展设计系统，实现了规范化的资产交付。</p>
+</div>
+<div class="space-y-3">
+<label class="text-[10px] font-black text-tertiary uppercase tracking-[0.3em] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> 交付结果 (R)
+                            </label>
+<div class="bg-tertiary/10 p-6 rounded-3xl border-l-8 border-tertiary shadow-sm">
+<p class="text-xl font-black text-on-surface leading-tight">
+                                    将前端开发周期缩短了 40%，并为超过 12 个企业级应用建立了完美的一致性体验。
+                                </p>
+</div>
+</div>
+</div>
+<!-- Full Narrative View -->
+<div class="mt-auto pt-10 border-t border-outline-variant/30">
+<div class="flex items-center gap-3 mb-5">
+<span class="material-symbols-rounded text-primary" data-icon="terminal">terminal</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">最终叙事预览</p>
+</div>
+<div class="p-8 bg-primary-container/10 rounded-3xl italic text-on-primary-container leading-relaxed border border-primary-container/30 relative">
+<span class="absolute top-4 left-4 text-4xl text-primary/20 font-serif">“</span>
+                            “主导并落地了可扩展的企业级设计系统，带领 5 人团队优化内部工具开发流程，使产研效率提升 40%，确保了全平台 100% 的品牌一致性。”
+                            <span class="absolute bottom-2 right-4 text-4xl text-primary/20 font-serif">”</span>
+</div>
+</div>
+</div>
+<!-- Floating Action Hub -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-5 w-full justify-center px-10">
+<button class="group flex items-center gap-3 px-8 py-5 rounded-full bg-white border border-outline-variant/40 text-on-surface-variant font-black hover:bg-surface-container-high transition-all active:scale-95 shadow-xl">
+<span class="material-symbols-rounded text-on-surface-variant transition-transform group-hover:rotate-180" data-icon="cached">cached</span>
+                        重新生成
+                    </button>
+<button class="group flex items-center gap-4 px-12 py-6 rounded-full primary-gradient text-white font-black floating-action hover:scale-105 active:scale-95 transition-all shadow-[0_20px_50px_rgba(124,58,237,0.3)]">
+<span class="material-symbols-rounded" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+                        采纳重写方案
+                    </button>
+<button class="flex items-center justify-center w-16 h-16 rounded-full bg-error-container text-on-error-container hover:brightness-95 transition-all shadow-xl hover:rotate-90">
+<span class="material-symbols-rounded text-2xl" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Stats Chip Grid -->
+<div class="grid grid-cols-3 gap-4">
+<div class="p-5 glass rounded-[32px] text-center border-tertiary/30 shadow-sm">
+<p class="text-[10px] font-black text-tertiary uppercase tracking-wider mb-1">关键词匹配</p>
+<p class="text-2xl font-black text-on-surface">94%</p>
+</div>
+<div class="p-5 glass rounded-[32px] text-center border-secondary/30 shadow-sm">
+<p class="text-[10px] font-black text-secondary uppercase tracking-wider mb-1">影响力等级</p>
+<p class="text-2xl font-black text-on-surface">极高</p>
+</div>
+<div class="p-5 glass rounded-[32px] text-center border-primary/30 shadow-sm">
+<p class="text-[10px] font-black text-primary uppercase tracking-wider mb-1">可读性评分</p>
+<p class="text-2xl font-black text-on-surface">优秀</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB: AI Assistant Anchor -->
+<div class="fixed bottom-gutter right-gutter z-50 flex flex-col items-end gap-5">
+<div class="hidden md:block glass px-6 py-3 rounded-2xl text-on-surface shadow-2xl mb-2 opacity-0 translate-y-4 transition-all duration-500 border-primary/30" id="ai-hint">
+<p class="text-sm font-bold">“试着要求更具技术感或领导力的口吻！”</p>
+</div>
+<button class="w-20 h-20 rounded-full primary-gradient flex items-center justify-center text-white floating-action hover:scale-110 active:scale-90 transition-all group shadow-[0_20px_40px_rgba(124,58,237,0.4)]" onmouseenter="document.getElementById('ai-hint').style.opacity='1'; document.getElementById('ai-hint').style.transform='translateY(0)'" onmouseleave="document.getElementById('ai-hint').style.opacity='0'; document.getElementById('ai-hint').style.transform='translateY(16px)'">
+<span class="material-symbols-rounded text-[40px] group-hover:rotate-12 transition-transform" data-icon="unfold_more_double" style="font-variation-settings: 'FILL' 1;">unfold_more_double</span>
+</button>
+</div>
+<!-- Bottom Nav Anchor (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-2xl flex justify-around items-center px-4 pb-10 pt-5 rounded-t-[40px] shadow-[0px_-10px_40px_rgba(124,58,237,0.15)] border-t border-outline-variant/30">
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
+<span class="material-symbols-rounded" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">发现</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-3xl px-6 py-3">
+<span class="material-symbols-rounded" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label-sm text-label-sm mt-1 font-bold">简历</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
+<span class="material-symbols-rounded" data-icon="forum">forum</span>
+<span class="font-label-sm text-label-sm mt-1">对话</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-60">
+<span class="material-symbols-rounded" data-icon="person_search">person_search</span>
+<span class="font-label-sm text-label-sm mt-1">我的</span>
+</div>
+</nav>
+<script>
+    // Micro-interactions
+    document.querySelectorAll('.glass').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-6px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0px)';
+        });
+    });
+
+    const adoptBtn = document.querySelector('.primary-gradient.floating-action');
+    if(adoptBtn) {
+        adoptBtn.addEventListener('click', () => {
+            adoptBtn.innerHTML = '<span class="material-symbols-rounded animate-spin" data-icon="progress_activity">progress_activity</span> 正在应用...';
+            setTimeout(() => {
+                adoptBtn.innerHTML = '<span class="material-symbols-rounded" data-icon="verified">verified</span> 修改成功';
+                adoptBtn.classList.remove('primary-gradient');
+                adoptBtn.classList.add('bg-tertiary');
+            }, 1500);
+        });
+    }
+</script>
+<style>
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    .animate-shimmer {
+        animation: shimmer 2.5s infinite linear;
+    }
+</style>
+</body></html>

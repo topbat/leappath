@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>CareerFlux - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ede0ff",
+                    "surface-dim": "#d2d9f4",
+                    "secondary-fixed": "#ffdad4",
+                    "on-surface": "#131b2e",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005143",
+                    "on-secondary-fixed-variant": "#842415",
+                    "surface-container-low": "#f2f3ff",
+                    "surface-container-highest": "#dae2fd",
+                    "surface-tint": "#732ee4",
+                    "surface-container": "#eaedff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#7c3aed",
+                    "tertiary-fixed": "#58fbda",
+                    "primary-fixed-dim": "#d2bbff",
+                    "tertiary-fixed-dim": "#2cdebf",
+                    "surface-bright": "#faf8ff",
+                    "on-secondary-fixed": "#3f0300",
+                    "primary": "#630ed4",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#00201a",
+                    "on-primary-fixed": "#25005a",
+                    "surface-variant": "#dae2fd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#5cfedd",
+                    "tertiary": "#00594b",
+                    "secondary-container": "#fe7d66",
+                    "inverse-primary": "#d2bbff",
+                    "background": "#faf8ff",
+                    "on-surface-variant": "#4a4455",
+                    "surface-container-high": "#e2e7ff",
+                    "surface": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#283044",
+                    "tertiary-container": "#007462",
+                    "secondary": "#a53b29",
+                    "secondary-fixed-dim": "#ffb4a6",
+                    "on-background": "#131b2e",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "primary-fixed": "#eaddff",
+                    "outline-variant": "#ccc3d8",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#711609",
+                    "outline": "#7b7487"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Quicksand"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 20px rgba(124, 58, 237, 0.05);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #732ee4 0%, #a53b29 100%);
+        }
+        .progress-bar-gradient {
+            background: linear-gradient(90deg, #7c3aed 0%, #fe7d66 100%);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            background-color: #faf8ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-gutter py-sm">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">CareerFlux</span>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 active:scale-95 transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-primary hover:opacity-80 active:scale-95 transition-all" data-icon="account_circle">account_circle</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-4 min-h-screen">
+<!-- Hero Section: Profile Header -->
+<section class="primary-gradient rounded-[32px] p-6 mb-6 relative overflow-hidden text-on-primary">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-20 h-20 rounded-full border-4 border-white/20 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a young creative designer in a modern studio setting. The lighting is soft and cinematic with a hint of purple ambient glow to match the app's brand colors. High quality photography style, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHc2E1k77UiA5VNcBjZUrBDB6RoFnOP7oXgojrucyNGlM-_AxT-sUYpimiwV8AlOGveCiMSFUkmVjc6ivVqC5qaPJ_PzHldoWLVQoyWiEMaD1-_w9T1RjrVEJZX2moZilJpfi-oFrKiM9RgNGBbdvp0pTNdfEvN0WQeifhDbn9X6zKyGbwrL0YIrXQH9CRZx4Ala9_GID1BKt8rI71fqj36K_8VaXeSCHwri7EHw3iMaAJBCLnak5L4_wRFo62iXaJLEaCNkFiM0Q8"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold mb-1">Alex Chen</h1>
+<div class="inline-flex items-center bg-white/20 backdrop-blur-md px-3 py-1 rounded-full gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Pathseeker · LV. 14</span>
+</div>
+</div>
+</div>
+<!-- Profile Progress -->
+<div class="bg-black/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md">Profile Completion</span>
+<span class="font-label-md text-label-md">85%</span>
+</div>
+<div class="w-full h-2 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-white rounded-full transition-all duration-1000" style="width: 85%"></div>
+</div>
+<p class="text-[12px] opacity-80 mt-2 font-medium">Complete your portfolio to unlock "Pro Badge"</p>
+</div>
+</section>
+<!-- Achievement Bento Grid -->
+<section class="grid grid-cols-2 gap-4 mb-6">
+<div class="glass-card rounded-3xl p-5 flex flex-col justify-between aspect-square">
+<div class="w-12 h-12 rounded-2xl bg-primary-container flex items-center justify-center text-on-primary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant">勋章馆</h3>
+<p class="font-headline-md text-headline-md font-bold">12 <span class="text-label-sm font-normal text-outline">已得</span></p>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-5 flex flex-col justify-between aspect-square">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant">求职进度</h3>
+<p class="font-headline-md text-headline-md font-bold">Top 5%</p>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="mb-6">
+<button class="w-full glass-card rounded-2xl p-4 flex items-center justify-between hover:translate-x-1 transition-transform group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="text-left">
+<h4 class="font-label-md text-label-md">导出精美简历</h4>
+<p class="text-[12px] text-on-surface-variant">PDF, Word, or Web link</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</section>
+<!-- Settings List -->
+<section class="glass-card rounded-[32px] overflow-hidden mb-6">
+<div class="p-4 border-b border-outline-variant/10 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+<span class="font-label-md text-label-md">账户设置</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<div class="p-4 border-b border-outline-variant/10 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">security</span>
+<span class="font-label-md text-label-md">隐私与安全</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<div class="p-4 border-b border-outline-variant/10 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">help</span>
+<span class="font-label-md text-label-md">帮助中心</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-error">logout</span>
+<span class="font-label-md text-label-md text-error">退出登录</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0px_-4px_20px_rgba(124,58,237,0.05)] flex justify-around items-center px-4 pb-safe pt-2 rounded-t-xl h-20">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm mt-1">Tracker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-sm text-label-sm mt-1">Interviews</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for profile progress bar animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.w-full.h-2.bg-white\\/20 .h-full');
+            progressBars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 300);
+            });
+        });
+
+        // Floating elements click feedback
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.96)';
+            });
+            el.addEventListener('mouseup', function() {
+                this.style.transform = '';
+            });
+            el.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

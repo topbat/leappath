@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="跃途 LeapPath logo mark">
+  <defs>
+    <linearGradient id="leap-grad" x1="16" y1="104" x2="104" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A56DB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <!-- rounded squircle backdrop -->
+  <rect x="4" y="4" width="112" height="112" rx="28" fill="url(#leap-grad)"/>
+  <!-- ascending path: three rising steps -->
+  <path d="M28 84 L48 84 L48 64 L68 64 L68 44 L88 44"
+        stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92"/>
+  <!-- the leap: a node leaping off the top step -->
+  <circle cx="92" cy="30" r="11" fill="#FFFFFF"/>
+  <circle cx="92" cy="30" r="5" fill="url(#leap-grad)"/>
+  <!-- motion arc hinting the jump -->
+  <path d="M70 44 Q84 22 90 34" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.55" stroke-dasharray="1 7"/>
+</svg>

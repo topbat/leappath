@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ 双主题 Design Token ============ */
+/* leap = 专业权威（深企业蓝 / Inter）  flux = 灵动活力（亮紫 / Quicksand 玻璃拟态） */
+
+:root,
+[data-theme='leap'] {
+  --c-bg: 249 250 251;
+  --c-surface: 255 255 255;
+  --c-surface-2: 243 244 246;
+  --c-border: 229 231 235;
+  --c-ink: 20 27 43;
+  --c-ink-soft: 67 70 84;
+  --c-primary: 26 86 219;       /* #1A56DB */
+  --c-primary-soft: 239 246 255; /* #EFF6FF */
+  --c-on-primary: 255 255 255;
+  --c-accent: 13 148 136;        /* teal #0D9488 */
+  --c-mint: 16 185 129;
+  --c-success: 22 163 74;
+  --c-warning: 217 119 6;
+  --c-danger: 220 38 38;
+
+  --radius-card: 1rem;
+  --radius-btn: 0.5rem;
+  --font-display: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-body: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --shadow-card: 0 1px 3px rgb(20 27 43 / 0.05), 0 1px 2px rgb(20 27 43 / 0.04);
+  --shadow-lift: 0 10px 25px rgb(20 27 43 / 0.10);
+  --glass-bg: 255 255 255;
+  --glass-blur: 0px;
+}
+
+[data-theme='flux'] {
+  --c-bg: 250 248 255;
+  --c-surface: 255 255 255;
+  --c-surface-2: 242 243 255;
+  --c-border: 226 231 255;
+  --c-ink: 19 27 46;
+  --c-ink-soft: 74 68 85;
+  --c-primary: 124 58 237;        /* #7C3AED */
+  --c-primary-soft: 237 224 255;  /* #EDE0FF */
+  --c-on-primary: 255 255 255;
+  --c-accent: 254 125 102;        /* coral #FE7D66 */
+  --c-mint: 44 222 191;
+  --c-success: 5 150 105;
+  --c-warning: 234 88 12;
+  --c-danger: 186 26 26;
+
+  --radius-card: 1.5rem;
+  --radius-btn: 1rem;
+  --font-display: 'Quicksand', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --shadow-card: 0 4px 20px rgb(124 58 237 / 0.06);
+  --shadow-lift: 0 10px 30px rgb(124 58 237 / 0.14);
+  --glass-bg: 255 255 255;
+  --glass-blur: 12px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: rgb(var(--c-bg));
+  color: rgb(var(--c-ink));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  user-select: none;
+}
+.ms-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400;
+}
+
+/* 玻璃卡片：flux 主题下启用毛玻璃，leap 下退化为实心卡片 */
+.glass {
+  background: rgb(var(--glass-bg) / var(--glass-alpha, 1));
+  backdrop-filter: blur(var(--glass-blur));
+}
+[data-theme='flux'] .glass {
+  --glass-alpha: 0.82;
+  border: 1px solid rgb(255 255 255 / 0.5);
+}
+
+/* 通用组件类 */
+@layer components {
+  .lp-card {
+    @apply bg-surface rounded-card border border-border shadow-card;
+  }
+  .lp-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn px-4 py-2 font-display font-semibold transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .lp-btn-primary {
+    @apply lp-btn bg-primary text-on-primary hover:opacity-90 shadow-card;
+  }
+  .lp-btn-ghost {
+    @apply lp-btn bg-transparent text-ink-soft hover:bg-surface-2;
+  }
+  .lp-btn-outline {
+    @apply lp-btn bg-surface border border-border text-ink hover:border-primary hover:text-primary;
+  }
+  .lp-input {
+    @apply w-full bg-surface border border-border rounded-btn px-3.5 py-2.5 text-ink outline-none transition-all placeholder:text-ink-soft/50 focus:border-primary focus:ring-2 focus:ring-primary/20;
+  }
+  .lp-chip {
+    @apply inline-flex items-center gap-1 rounded-pill bg-surface-2 px-3 py-1 text-sm font-medium text-ink-soft;
+  }
+  .lp-tag {
+    @apply inline-flex items-center rounded-pill px-2.5 py-0.5 text-xs font-semibold;
+  }
+  .lp-section-title {
+    @apply font-display text-lg font-bold text-ink;
+  }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-ink) / 0.15);
+  border-radius: 10px;
+}
+
+/* 淡入动画 */
+@keyframes lp-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.lp-fade {
+  animation: lp-fade-in 0.4s ease both;
+}
+
+/* AI 思考点 */
+@keyframes lp-blink {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
+.lp-dot {
+  animation: lp-blink 1.4s infinite both;
+}

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>职通车 CareerPartner | 专业求职助手</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', "Microsoft YaHei", "PingFang SC", sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .kanban-column { min-height: calc(100vh - 340px); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+        
+        /* Modern icon style overrides */
+        .icon-filled { font-variation-settings: 'FILL' 1, 'wght' 300; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "outline-variant": "#c3c5d7",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#00174d",
+                    "tertiary-container": "#5f6265",
+                    "primary-container": "#1a56db",
+                    "surface-container-highest": "#dce2f7",
+                    "secondary-fixed-dim": "#bdc7d8",
+                    "on-secondary-container": "#596372",
+                    "secondary-fixed": "#d9e3f4",
+                    "on-primary-fixed-variant": "#003dab",
+                    "surface": "#f9f9ff",
+                    "on-secondary-fixed-variant": "#3e4755",
+                    "surface-tint": "#1353d8",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#474a4d",
+                    "surface-container-low": "#f1f3ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-primary-container": "#d4dcff",
+                    "surface-variant": "#dce2f7",
+                    "on-surface-variant": "#434654",
+                    "inverse-surface": "#293040",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "background": "#f9f9ff",
+                    "secondary-container": "#d6e0f1",
+                    "primary": "#003fb1",
+                    "outline": "#737686",
+                    "surface-dim": "#d3daef",
+                    "on-tertiary-fixed": "#191c1f",
+                    "on-tertiary-container": "#dbdee1",
+                    "on-background": "#141b2b",
+                    "secondary": "#555f6d",
+                    "on-surface": "#141b2b",
+                    "on-secondary-fixed": "#121c28",
+                    "surface-container-high": "#e1e8fd",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container": "#e9edff",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "inverse-primary": "#b5c4ff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#e0e2e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit-md": "1rem",
+                    "margin-desktop": "2rem",
+                    "unit-lg": "1.5rem",
+                    "unit-sm": "0.5rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem",
+                    "unit-xs": "0.25rem",
+                    "unit-xl": "2.5rem",
+                    "sidebar-width": "280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter", "Microsoft YaHei"],
+                    "headline-lg-mobile": ["Inter", "Microsoft YaHei"],
+                    "label-sm": ["Inter", "Microsoft YaHei"],
+                    "body-md": ["Inter", "Microsoft YaHei"],
+                    "body-sm": ["Inter", "Microsoft YaHei"],
+                    "body-lg": ["Inter", "Microsoft YaHei"],
+                    "label-md": ["Inter", "Microsoft YaHei"],
+                    "headline-md": ["Inter", "Microsoft YaHei"],
+                    "headline-sm": ["Inter", "Microsoft YaHei"],
+                    "display-lg": ["Inter", "Microsoft YaHei"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Desktop Side Navigation -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface border-r border-outline-variant flex flex-col py-unit-lg hidden lg:flex z-40">
+<div class="px-unit-lg mb-unit-xl">
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary tracking-tight">职通车 CareerPartner</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">专业求职管理套件</p>
+</div>
+<nav class="flex-grow space-y-unit-xs px-unit-sm">
+<div class="bg-primary-container text-on-primary-container border-l-4 border-primary rounded-r-lg px-unit-lg py-3 flex items-center gap-3 cursor-pointer transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined icon-filled" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md">控制面板</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-container-high px-unit-lg py-3 flex items-center gap-3 cursor-pointer transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">职位广场</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-container-high px-unit-lg py-3 flex items-center gap-3 cursor-pointer transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="edit_document">edit_document</span>
+<span class="font-label-md text-label-md">简历助手</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-container-high px-unit-lg py-3 flex items-center gap-3 cursor-pointer transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="model_training">model_training</span>
+<span class="font-label-md text-label-md">面试通关</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-container-high px-unit-lg py-3 flex items-center gap-3 cursor-pointer transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-label-md text-label-md">投递追踪</span>
+</div>
+</nav>
+<div class="px-unit-lg mt-auto">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg mb-unit-lg flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                创建新简历
+            </button>
+<div class="space-y-unit-xs">
+<div class="text-on-surface-variant hover:bg-surface-container-high px-unit-sm py-2 flex items-center gap-3 cursor-pointer rounded transition-all">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<span class="font-label-md text-label-md">偏好设置</span>
+</div>
+<div class="text-on-surface-variant hover:bg-surface-container-high px-unit-sm py-2 flex items-center gap-3 cursor-pointer rounded transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">退出登录</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top AppBar (Desktop Only) -->
+<header class="hidden lg:flex fixed top-0 right-0 left-sidebar-width h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant items-center justify-between px-margin-desktop z-30">
+<div class="flex items-center gap-unit-md flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="搜索申请记录、职位或简历..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-unit-lg">
+<button class="bg-primary-container text-on-primary-container px-unit-lg py-2 rounded-full font-label-md text-label-md hover:opacity-90 transition-all font-bold">升级计划</button>
+<div class="flex gap-unit-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container-high rounded-full transition-colors" data-icon="notifications_none">notifications_none</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container-high rounded-full transition-colors" data-icon="help_outline">help_outline</span>
+</div>
+<div class="w-9 h-9 rounded-full overflow-hidden border-2 border-primary/10 hover:border-primary transition-all cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Alex的职业头像" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA3yB61eByB1UAJR3u0Ttr82328_ZH150RNjAD5wkIgxkKNA5nGA_0KITUzTP2UBa8xQzBHzwdk9wxsvW4kWjUsq7toXt8t8iUwHd1hiZpYZIAw5ijNt_IbiUNDgLottqeKfuC5PP7k1iU6IjDYgdh9Q2Sx3aSc24dnJ_Y_Iov7nDPQKDti3hF4idoGrNczmHS3VKjMqXhmE-7PgnJhTq86rg-xIbhzv5pAUgq9R0zOc_0756fA3ah4C17lYN0sJwL7Sx-PjEx2u_b"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="lg:ml-sidebar-width pt-16 pb-20 lg:pb-unit-lg px-margin-mobile lg:px-margin-desktop">
+<!-- Welcome Section -->
+<section class="py-unit-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-unit-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">早上好，Alex</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">本周您有 <span class="text-primary font-bold">3</span> 场面试，共有 <span class="text-primary font-bold">12</span> 个职位正在流程中。</p>
+</div>
+<div class="flex gap-unit-sm">
+<div class="bg-surface p-unit-md rounded-2xl border border-outline-variant shadow-sm flex items-center gap-3">
+<div class="p-2.5 bg-primary-fixed rounded-xl text-primary">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">投递活跃度</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">+12%</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Application Tracker (Kanban) - Left 8 columns -->
+<section class="lg:col-span-8 flex flex-col gap-unit-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">投递追踪看板</h3>
+<div class="flex gap-unit-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="unfold_more">unfold_more</span>
+</button>
+</div>
+</div>
+<div class="flex gap-unit-md overflow-x-auto pb-4 custom-scrollbar">
+<!-- To Apply -->
+<div class="flex-shrink-0 w-72 flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between px-unit-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2 font-bold">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+                                待申请 (5)
+                            </span>
+</div>
+<div class="kanban-column space-y-unit-md bg-surface-container-low/50 p-3 rounded-2xl border border-outline-variant/30">
+<!-- Card -->
+<div class="bg-surface p-unit-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">UX/UI</span>
+<span class="material-symbols-outlined text-outline text-sm group-hover:text-primary transition-colors" data-icon="more_horiz">more_horiz</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface mb-1 font-bold">资深产品设计师</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Google • 远程</p>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+<span class="text-[12px]">2天前收藏</span>
+</div>
+</div>
+<!-- Card -->
+<div class="bg-surface p-unit-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">市场策划</span>
+<span class="material-symbols-outlined text-outline text-sm group-hover:text-primary transition-colors" data-icon="more_horiz">more_horiz</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface mb-1 font-bold">品牌策略专家</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Nike • 比弗顿</p>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+<span class="text-[12px]">5小时前收藏</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Applied -->
+<div class="flex-shrink-0 w-72 flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between px-unit-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2 font-bold">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                                已投递 (8)
+                            </span>
+</div>
+<div class="kanban-column space-y-unit-md bg-surface-container-low/50 p-3 rounded-2xl border border-outline-variant/30">
+<div class="bg-surface p-unit-md rounded-xl border border-outline-variant shadow-sm hover:shadow-md hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">技术开发</span>
+<span class="material-symbols-outlined text-outline text-sm group-hover:text-primary transition-colors" data-icon="more_horiz">more_horiz</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface mb-1 font-bold">前端开发主管</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Vercel • 混合办公</p>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm icon-filled" data-icon="check_circle">check_circle</span>
+<span class="text-[12px] font-bold">3天前已投递</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interviewing -->
+<div class="flex-shrink-0 w-72 flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between px-unit-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2 font-bold">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+                                面试中 (3)
+                            </span>
+</div>
+<div class="kanban-column space-y-unit-md bg-surface-container-low/50 p-3 rounded-2xl border border-outline-variant/30">
+<div class="bg-surface p-unit-md rounded-xl border-l-4 border-l-tertiary border-y border-r border-outline-variant shadow-sm hover:shadow-md transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">金融科技</span>
+<span class="material-symbols-outlined text-outline text-sm group-hover:text-tertiary transition-colors" data-icon="more_horiz">more_horiz</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface mb-1 font-bold">产品经理</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Stripe • 旧金山</p>
+<div class="bg-tertiary-container/5 p-2 rounded-lg text-tertiary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm icon-filled" data-icon="calendar_today">calendar_today</span>
+<span class="text-[11px] font-extrabold">周二，10:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Offer -->
+<div class="flex-shrink-0 w-72 flex flex-col gap-unit-sm">
+<div class="flex items-center justify-between px-unit-xs">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2 font-bold">
+<span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                                已获得录取 (1)
+                            </span>
+</div>
+<div class="kanban-column space-y-unit-md bg-surface-container-low/50 p-3 rounded-2xl border border-outline-variant/30">
+<div class="bg-surface p-unit-md rounded-xl border border-green-200 shadow-md ring-1 ring-green-100 hover:shadow-lg transition-all cursor-pointer scale-105 origin-top">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">成功获选</span>
+<span class="material-symbols-outlined text-green-500 text-sm icon-filled" data-icon="verified">verified</span>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface mb-1 font-bold">资深设计师</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Airbnb • 混合办公</p>
+<div class="text-green-600 font-extrabold text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="payments">payments</span>
+    ¥1.2M - ¥1.5M / 年
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar Widgets - Right 4 columns -->
+<aside class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Resume Center Widget -->
+<div class="bg-surface rounded-2xl border border-outline-variant shadow-sm p-unit-lg overflow-hidden relative">
+<div class="flex items-center justify-between mb-unit-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">简历中心</h3>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary-fixed rounded-full p-1.5 transition-colors" data-icon="add_circle_outline">add_circle_outline</span>
+</div>
+<div class="space-y-unit-md">
+<!-- Resume Version 1 -->
+<div class="group flex items-center gap-unit-md p-unit-sm rounded-xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<div class="w-12 h-16 bg-primary-fixed/20 rounded-lg flex items-center justify-center text-primary border border-primary-fixed">
+<span class="material-symbols-outlined text-2xl icon-filled" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface font-bold">Executive_2024_主简历.pdf</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">2天前修改</p>
+</div>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-all hover:text-primary" data-icon="download_for_offline">download_for_offline</span>
+</div>
+<!-- Resume Version 2 -->
+<div class="group flex items-center gap-unit-md p-unit-sm rounded-xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<div class="w-12 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center text-on-surface-variant border border-outline-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface font-bold">创意作品集_v2.pdf</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">1周前修改</p>
+</div>
+<span class="material-symbols-outlined text-outline opacity-0 group-hover:opacity-100 transition-all hover:text-primary" data-icon="download_for_offline">download_for_offline</span>
+</div>
+</div>
+<div class="mt-unit-lg pt-unit-md border-t border-outline-variant">
+<div class="bg-primary-container/5 p-unit-md rounded-2xl flex items-start gap-3 border border-primary/10">
+<span class="material-symbols-outlined text-primary icon-filled" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<p class="font-label-md text-label-md text-primary mb-1 font-bold">AI 简历诊断</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-relaxed">"您的 'Executive' 简历缺少 Vercel 职位的 3 个核心关键词。"</p>
+<button class="mt-2 text-primary text-[12px] font-extrabold hover:underline flex items-center gap-1">立即优化 <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Insights Widget -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl p-unit-lg shadow-xl relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="insights">insights</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm mb-unit-md flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+    市场情报
+</h3>
+<p class="font-body-sm text-body-sm text-inverse-on-surface/80 mb-unit-lg">上海地区 <span class="text-primary-fixed font-bold">首席设计师</span> 的需求本月上升了 18%。</p>
+<div class="space-y-unit-sm">
+<div class="flex justify-between items-center bg-surface/10 p-3 rounded-xl backdrop-blur-sm border border-surface/5">
+<span class="text-sm opacity-80">平均基础薪资</span>
+<span class="font-bold text-primary-fixed">¥92,000 / 月</span>
+</div>
+<div class="flex justify-between items-center bg-surface/10 p-3 rounded-xl backdrop-blur-sm border border-surface/5">
+<span class="text-sm opacity-80">热门行业</span>
+<span class="font-bold text-primary-fixed">金融科技</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 w-full z-50 border-t border-outline-variant bg-surface/95 backdrop-blur-md h-16 flex justify-around items-center px-margin-mobile shadow-2xl">
+<div class="flex flex-col items-center justify-center text-primary font-bold transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined icon-filled" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] mt-1">首页</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-[10px] mt-1">搜索</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-[10px] mt-1">面试</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant transition-all active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-[10px] mt-1">追踪</span>
+</div>
+</nav>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.cursor-pointer').forEach(el => {
+            el.addEventListener('click', () => {
+                el.classList.add('opacity-80');
+                setTimeout(() => el.classList.remove('opacity-80'), 100);
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        if(searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-4', 'ring-primary/10');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-4', 'ring-primary/10');
+            });
+        }
+    </script>
+</body></html>

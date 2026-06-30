@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Score - CareerPartner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "outline-variant": "#c3c5d7",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#00174d",
+                    "tertiary-container": "#5f6265",
+                    "primary-container": "#1a56db",
+                    "surface-container-highest": "#dce2f7",
+                    "secondary-fixed-dim": "#bdc7d8",
+                    "on-secondary-container": "#596372",
+                    "secondary-fixed": "#d9e3f4",
+                    "on-primary-fixed-variant": "#003dab",
+                    "surface": "#f9f9ff",
+                    "on-secondary-fixed-variant": "#3e4755",
+                    "surface-tint": "#1353d8",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#474a4d",
+                    "surface-container-low": "#f1f3ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "on-primary-container": "#d4dcff",
+                    "surface-variant": "#dce2f7",
+                    "on-surface-variant": "#434654",
+                    "inverse-surface": "#293040",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "background": "#f9f9ff",
+                    "secondary-container": "#d6e0f1",
+                    "primary": "#003fb1",
+                    "outline": "#737686",
+                    "surface-dim": "#d3daef",
+                    "on-tertiary-fixed": "#191c1f",
+                    "on-tertiary-container": "#dbdee1",
+                    "on-background": "#141b2b",
+                    "secondary": "#555f6d",
+                    "on-surface": "#141b2b",
+                    "on-secondary-fixed": "#121c28",
+                    "surface-container-high": "#e1e8fd",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container": "#e9edff",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "inverse-primary": "#b5c4ff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#e0e2e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit-md": "1rem",
+                    "margin-desktop": "2rem",
+                    "unit-lg": "1.5rem",
+                    "unit-sm": "0.5rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem",
+                    "unit-xs": "0.25rem",
+                    "unit-xl": "2.5rem",
+                    "sidebar-width": "280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gauge-container {
+            position: relative;
+            width: 240px;
+            height: 120px;
+            overflow: hidden;
+        }
+        .gauge-bg {
+            fill: none;
+            stroke: #e5e7eb;
+            stroke-width: 12;
+            stroke-dasharray: 251.32;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+        }
+        .gauge-fill {
+            fill: none;
+            stroke: #1a56db;
+            stroke-width: 12;
+            stroke-dasharray: 251.32;
+            stroke-dashoffset: 251.32;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease-out;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c3c5d7;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-24 lg:pb-0">
+<!-- Top Navigation (Mobile Version) -->
+<header class="sticky top-0 z-50 bg-surface shadow-sm h-16 flex items-center px-4 justify-between lg:hidden">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">description</span>
+<h1 class="font-headline-sm text-headline-sm-mobile font-bold text-primary">CareerPartner</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young business woman in her early 30s wearing a charcoal blazer. The setting is a bright, modern corporate office with soft natural window light. The photograph is high-resolution with a shallow depth of field, highlighting her confident and professional expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGLxghAwMr1hX9cAa9Zd3-WYEOX4FhrkgnvrIXSqnqpBjeY_5uI4KQi_ij4vsnYy6cJQFez07lGVw9YlyfgKO1BqEJgWaAq4LELmGUpmApSOieMZyoKLDMGH93yHC3kQ0YA4IIddW0nxHEEwi55DPB0oFEgVwmPQCCaohaJgutJIQAZxoPgtE-KcGOFkeNNoAN9n5trZjZz0Zmaz1Hhp3fTDOdAQTAw3BQbwEvMwwFO2DgPkpBLQ2brVqLJ0qpzVpdDluitPaYNL1i"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-md mx-auto px-4 py-6 space-y-6 lg:max-w-6xl lg:grid lg:grid-cols-12 lg:gap-8 lg:py-12">
+<!-- Score Overview Section -->
+<section class="lg:col-span-5 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2">Resume Authority Score</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Calculated based on current industry standards</p>
+<!-- Gauge Chart -->
+<div class="gauge-container mb-4">
+<svg class="w-full h-full" viewbox="0 0 100 50">
+<path class="gauge-bg" d="M 10 50 A 40 40 0 0 1 90 50"></path>
+<path class="gauge-fill" d="M 10 50 A 40 40 0 0 1 90 50" id="gaugePath"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-end pb-2">
+<span class="font-display-lg text-display-lg text-primary" id="scoreDisplay">0</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Expert Level</span>
+</div>
+</div>
+<div class="w-full grid grid-cols-2 gap-4 mt-6">
+<div class="p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Status</span>
+<span class="font-headline-sm text-headline-sm text-primary">Strong</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Percentile</span>
+<span class="font-headline-sm text-headline-sm text-primary">Top 12%</span>
+</div>
+</div>
+</div>
+<!-- Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant shadow-sm space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-outline-variant pb-3">Score Breakdown</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Content Quality</span>
+<span class="font-label-md text-label-md text-primary">85/100</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Keyword Match</span>
+<span class="font-label-md text-label-md text-primary">72/100</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[72%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Formatting</span>
+<span class="font-label-md text-label-md text-primary">94/100</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[94%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface">Competitiveness</span>
+<span class="font-label-md text-label-md text-primary">68/100</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[68%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Improvements List Section -->
+<section class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm flex flex-col h-full">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">High Priority Improvements</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Recommended actions to boost your score</p>
+</div>
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full font-label-sm text-label-sm">4 Critical</span>
+</div>
+<div class="flex-1 overflow-y-auto max-h-[500px] lg:max-h-none p-4 space-y-3 custom-scrollbar">
+<!-- Suggestion Item -->
+<div class="flex gap-4 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="mt-1">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-1 flex items-center gap-2">
+                                Quantify Experience Impact
+                                <span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your bullet points lack numerical data. Add percentages, revenue figures, or headcounts to demonstrate authority.</p>
+<div class="mt-2 flex gap-2">
+<span class="text-[11px] font-bold uppercase tracking-tighter text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded">+12 Points</span>
+<button class="text-primary text-[12px] font-bold hover:underline">Apply AI Suggestion</button>
+</div>
+</div>
+</div>
+<!-- Suggestion Item -->
+<div class="flex gap-4 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="mt-1">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Missing Industry Keywords</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Terms like "Strategic Planning" and "Agile Delivery" are absent from your summary section.</p>
+<div class="mt-2 flex gap-2">
+<span class="text-[11px] font-bold uppercase tracking-tighter text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded">+8 Points</span>
+<button class="text-primary text-[12px] font-bold hover:underline">View Keywords</button>
+</div>
+</div>
+</div>
+<!-- Suggestion Item -->
+<div class="flex gap-4 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="mt-1">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Weak Active Verbs</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Avoid passive language like "Responsible for." Use authoritative verbs like "Orchestrated" or "Spearheaded."</p>
+<div class="mt-2 flex gap-2">
+<span class="text-[11px] font-bold uppercase tracking-tighter text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded">+5 Points</span>
+<button class="text-primary text-[12px] font-bold hover:underline">Auto-Rewrite</button>
+</div>
+</div>
+</div>
+<!-- Suggestion Item -->
+<div class="flex gap-4 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors group cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="mt-1">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-1 flex items-center gap-2">
+                                Summary Length Check
+                                <span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your professional summary exceeds the 4-line limit. Research shows recruiters skip long paragraphs.</p>
+<div class="mt-2 flex gap-2">
+<span class="text-[11px] font-bold uppercase tracking-tighter text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-0.5 rounded">+4 Points</span>
+<button class="text-primary text-[12px] font-bold hover:underline">Shorten</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low mt-auto rounded-b-xl border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg">
+                        Update Resume Now
+                        <span class="material-symbols-outlined">auto_fix_high</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Version) -->
+<nav class="fixed bottom-0 w-full z-50 border-t border-outline-variant bg-surface h-16 flex justify-around items-center px-4 lg:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-[10px] uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-[10px] uppercase">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-[10px] uppercase">Resume</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-sm text-[10px] uppercase">Track</span>
+</a>
+</nav>
+<script>
+        // Simple gauge animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const score = 78;
+            const gaugePath = document.getElementById('gaugePath');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            
+            // Calculate dash offset: full length (251.32) to target (78% of half-circle)
+            // Arc is half of a circle. 2*PI*R / 2 = PI * 40 approx 125.66.
+            // Wait, my SVG path dasharray is 251.32 (full circle). I'm using half path.
+            // Half circle length is 125.66
+            const maxOffset = 251.32;
+            const halfCircleLength = 125.66; 
+            const targetOffset = maxOffset - (halfCircleLength * (score / 100));
+
+            setTimeout(() => {
+                gaugePath.style.strokeDashoffset = targetOffset;
+                
+                let currentScore = 0;
+                const interval = setInterval(() => {
+                    if (currentScore >= score) {
+                        clearInterval(interval);
+                    } else {
+                        currentScore++;
+                        scoreDisplay.innerText = currentScore;
+                    }
+                }, 15);
+            }, 300);
+        });
+
+        // Add interaction for checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const parent = this.closest('.group');
+                if (this.checked) {
+                    parent.style.opacity = '0.5';
+                    parent.style.textDecoration = 'line-through';
+                } else {
+                    parent.style.opacity = '1';
+                    parent.style.textDecoration = 'none';
+                }
+            });
+        });
+    </script>
+</body></html>
